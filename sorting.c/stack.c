@@ -3,26 +3,29 @@
 
 int stack[MAX];
 int top = -1;
-void push(){
+
+void push() {
+    int item;
     
     if(top == MAX - 1) {
         printf("Stack Overflow\n");
     } 
     else {
+        printf("Enter element to push: ");
+        scanf("%d", &item);
         top++;
-        printf("enter number");
-        scanf("%d \n",stack[top]);
+        stack[top] = item;
         printf("Element pushed successfully\n");
     }
 }
 
 void pop() {
-    if(top == MAX-1) {
+    if(top == -1) {
         printf("Stack Underflow\n");
     } 
     else {
-        top--;
         printf("Popped element: %d\n", stack[top]);
+        top--;
     }
 }
 
@@ -41,7 +44,7 @@ void show() {
 int main() {
     int choice;
 
-    while(1) {
+    do {
         printf("\n--- STACK MENU ---\n");
         printf("1. Push\n");
         printf("2. Pop\n");
@@ -57,5 +60,5 @@ int main() {
             case 4: return 0;
             default: printf("Invalid choice\n");
         }
-    }
+    }while(choice != 4);
 }
