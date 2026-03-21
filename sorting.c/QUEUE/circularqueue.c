@@ -54,14 +54,9 @@ void display() {
     } 
     else {
 
-        i = front;
-
-        while (i != rear) {
-            printf("%d ", cqueue[i]);
-            i = (i + 1) % MAX;
-        }
-
+       for(i=front;i<=rear;i++){
         printf("%d", cqueue[rear]);
+       }
     }
 
     printf("\n");
